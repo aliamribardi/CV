@@ -21,16 +21,20 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach ($skills as $skill)
                         <tr>
-                            <td class="hidden-xs">1</td>
-                            <td>Palo Alto</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $skill->skill }}</td>
                             <td class="width-150">
                                 <div class="progress progress-sm mt-xs js-progress-animate">
-                                    <div class="progress-bar progress-bar-success" data-width="29%" style="width: 0;"></div>
+                                    <div class="progress-bar progress-bar-success" data-width="{{ $skill->percent.'%' }}" style="width: 0;"></div>
                                 </div>
                             </td>
-                            <td>nnn</td>
+                            <td>
+                                <a href="{{ Route('editSkill', $skill->id) }}"><i class="btn btn-default btn-sm mr-md glyphicon glyphicon-edit"></i></a>
+                            </td>
                         </tr>
+                        @endforeach
                         </tbody>
 
                     </table>

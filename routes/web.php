@@ -42,6 +42,9 @@ Route::get('/editWork/{work}', [WorkController::class, 'edit'])->name('editWork'
 Route::put('/updateWork/{work}', [WorkController::class, 'update'])->name('updateWork');
 
 Route::get('/createSkill', [SkillController::class, 'create'])->name('createSkill');
+Route::post('/storeSkill', [SkillController::class, 'store'])->name('storeSkill');
+Route::get('/editSkill/{skill}', [SkillController::class, 'edit'])->name('editSkill');
+Route::put('/updateSkill/{skill}', [SkillController::class, 'update'])->name('updateSkill');
 
 
 // Route::get('/coba', function() {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Skill;
 
 class SkillController extends Controller
 {
@@ -34,7 +35,19 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $validatedData = $request->validate([
+            'skill' => 'required|max:255',
+            'percent' => 'required|max:255',
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Skill::create($validatedData);
+
+        session()->flash('success', 'skill has been added successfully');
+
+        return redirect()->route('home');
     }
 
     /**
@@ -54,9 +67,12 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Skill $skill)
     {
-        //
+        // dd($skill);
+        return view('adminPanel.editSkill', [
+            'skills' => $skill,
+        ]);
     }
 
     /**
@@ -66,9 +82,18 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Skill $skill)
     {
-        //
+        $validatedData = $request->validate([
+            'skill' => 'required|max:255',
+            'percent' => 'required|max:255',
+        ]);
+
+        Skill::where('id', $skill->id)->update($validatedData);
+
+        session()->flash('success', 'skill has been successfully updated');
+
+        return redirect()->route('home');
     }
 
     /**
