@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\Education;
 use App\Models\Work;
+use App\Models\Skill;
 
 class HomeController extends Controller
 {
@@ -34,6 +35,8 @@ class HomeController extends Controller
             'educations' => Education::where('user_id', auth()->user()->id)->get(),
 
             'works' => Work::where('user_id', auth()->user()->id)->get(),
+
+            'skills' => Skill::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 }

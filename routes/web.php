@@ -39,6 +39,7 @@ Route::put('/updateEducation/{education}', [EducationController::class, 'update'
 Route::get('/createWork', [WorkController::class, 'create'])->name('createWork');
 Route::post('/storeWork', [WorkController::class, 'store'])->name('storeWork');
 Route::get('/editWork/{work}', [WorkController::class, 'edit'])->name('editWork');
+Route::put('/updateWork/{work}', [WorkController::class, 'update'])->name('updateWork');
 
 Route::get('/createSkill', [SkillController::class, 'create'])->name('createSkill');
 

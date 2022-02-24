@@ -82,9 +82,20 @@ class WorkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Work $work)
     {
-        //
+        $validatedData = $request->validate([
+            'company' => 'required|max:255',
+            'position' => 'required|max:255',
+            'year_of_entry' => 'required|max:255',
+            'year_out' => 'required|max:255',
+        ]);
+
+        Work::where('id', $work->id)->update($validatedData);
+
+        session()->flash('success', 'work has been successfully updated');
+
+        return redirect()->route('home');
     }
 
     /**

@@ -9,32 +9,32 @@
         <div class="col-md-11">
             <section class="widget">
                 <div class="body">
-                    <form class="no-margin" action="#" method="POST">
+                    <form class="no-margin" action="{{ Route('updateWork', $works->id) }}" method="POST">
                         @method('PUT')
                         @csrf
                         <fieldset>
                             <div class="form-group">
                                 <label for="company" >Company</label>
                                 <div class="input-addon">
-                                    <input id="company" type="text" name="company" class="form-control input-lg input-transparent" placeholder="Company">
+                                    <input id="company" type="text" name="company" class="form-control input-lg input-transparent" placeholder="Company" value="{{ $works->company }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="position" >Position</label>
                                 <div class="input-addon">
-                                    <input id="position" type="text" name="position" class="form-control input-lg input-transparent" placeholder="Position">
+                                    <input id="position" type="text" name="position" class="form-control input-lg input-transparent" placeholder="Position" value="{{ $works->position }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="year_of_entry" >Year Of Entry</label>
                                 <div class="input-addon">
-                                    <input id="year_of_entry" type="text" name="year_of_entry" class="form-control input-lg input-transparent" placeholder="Year Of Entry">
+                                    <input id="year_of_entry" type="text" name="year_of_entry" class="form-control input-lg input-transparent" placeholder="Year Of Entry" value="{{ $works->year_of_entry }}">
                                 </div>
                             </div>    
                             <div class="form-group">
                                 <label for="year_out" >Year Out</label>
                                 <div class="input-addon">
-                                    <input id="year_out" type="text" name="year_out" class="form-control input-lg input-transparent" placeholder="Year Out">
+                                    <input id="year_out" type="text" name="year_out" class="form-control input-lg input-transparent" placeholder="Year Out" value="{{ $works->year_out }}">
                                 </div>
                             </div>                        
                         </fieldset>
