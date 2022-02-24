@@ -7,6 +7,7 @@ use App\Models\About;
 use App\Models\Education;
 use App\Models\Work;
 use App\Models\Skill;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,7 @@ class HomeController extends Controller
     {
         // dd(About::where('id', auth()->user()->id)->get());
         return view('adminPanel.home', [
+            'users' => User::where('id', auth()->user()->id)->first(),
             'abouts' => About::where('user_id', auth()->user()->id)->first(), 
             'aboutData' => About::where('user_id', auth()->user()->id)->get(),
 
