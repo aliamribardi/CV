@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('phone_number');
             $table->string('image');
-            $table->string('about_me');
+            $table->text('about_me');
             $table->timestamps();
         });
     }

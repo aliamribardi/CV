@@ -5,7 +5,7 @@
                 <header>
                     <h4>
                         Table <span class="fw-semi-bold">Skill</span>
-                        @if (is_null($skills))
+                        @if (is_null($skillf))
                         <a href="{{ Route('createSkill') }}" class="pull-right">
                             <button class="btn btn-default btn-sm mr-md">Add Data</button>
                         </a>

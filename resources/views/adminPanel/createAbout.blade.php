@@ -34,7 +34,7 @@
                             <div class="form-group">
                                 <label for="about_me" >About_me</label>
                                 <div class="input-addon">
-                                    <textarea id="about_me" name="about_me" class="form-control input-lg input-transparent" placeholder="Your About Me"></textarea>
+                                    <textarea id="about_me" name="about_me" class="form-control input-lg input-transparent" placeholder="Your About Me" style="height: 200px"></textarea>
                                 </div>
                             </div>
                         </fieldset>

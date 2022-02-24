@@ -14,15 +14,36 @@
                         @csrf
                         <fieldset>
                             <div class="form-group">
+                                <label for="name" >Name</label>
+                                <div class="input-addon">
+                                    <input id="name" type="text" name="name" class="form-control input-lg input-transparent" placeholder="Name" value="{{ $abouts->user->name }}" autofocus>
+                                    @error('name')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="address" >Address</label>
                                 <div class="input-addon">
                                     <input id="address" type="text" name="address" class="form-control input-lg input-transparent" placeholder="Your Address" value="{{ $abouts->address }}">
+                                    @error('address')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="phone_number" >Phone Number</label>
                                 <div class="input-addon">
                                     <input id="phone_number" type="text" name="phone_number" class="form-control input-lg input-transparent" placeholder="Your phone_number" value="{{ $abouts->phone_number }}">
+                                    @error('phone_number')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
@@ -31,12 +52,22 @@
                                     <input type="hidden" name="oldImage" value="{{ $abouts->image }}">
                                     <img class="img-preview img-fluid mb-3 col-sm-5">
                                     <input id="image" type="file" name="image" class="form-control input-lg input-transparent" onchange="previewImage()">
+                                    @error('image')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="about_me" >About_me</label>
                                 <div class="input-addon">
-                                    <textarea id="about_me" name="about_me" class="form-control input-lg input-transparent" placeholder="Your About Me">{{ $abouts->about_me }}</textarea>
+                                    <textarea id="about_me" name="about_me" class="form-control input-lg input-transparent" placeholder="Your About Me" style="height: 200px">{{ $abouts->about_me }}</textarea>
+                                    @error('about_me')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                         </fieldset>

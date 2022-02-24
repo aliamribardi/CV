@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\About;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
@@ -41,7 +42,7 @@ class AboutController extends Controller
             'address' => 'required|max:255',
             'phone_number' => 'required|max:255',
             'image' => 'image|file|max:2048',
-            'about_me' => 'required|max:255',
+            'about_me' => 'required',
         ]);
 
         if($request->file('image')) {
@@ -94,6 +95,7 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
+        // dd($request);
         $validatedData = $request->validate([
             'address' => 'required|max:255',
             'phone_number' => 'required|max:255',
@@ -101,6 +103,7 @@ class AboutController extends Controller
             'about_me' => 'required|max:255',
         ]);
 
+        dd($request['name']);
         // dd($request->oldImage);
         if($request->file('image')) {
             if($request->oldImage) {
@@ -109,8 +112,11 @@ class AboutController extends Controller
             $validatedData['image'] = $request->file('image')->store('about-image');
         }
 
-        About::where('id', $about->id)
-            ->update($validatedData);
+        // $users = new User;
+        // $users['name'] = $request['name'];
+        // $users->save();
+        
+        About::where('id', $about->id)->update($validatedData);
 
         session()->flash('success', 'data updated successfully');
 

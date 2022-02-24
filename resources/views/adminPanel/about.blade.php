@@ -14,7 +14,12 @@
             </h2>
         </header>
         <div class="col-md-3">
-            <img src="{{ asset('storage/' . $abouts->image) }}" alt="{{ $abouts->address }}" class="img-circle" style="height: 250px; width: 250px;">
+            @if (!is_null($abouts))
+                <img src="{{ asset('storage/' . $abouts->image) }}" alt="{{ $abouts->address }}" class="img-circle" style="height: 250px; width: 250px;">
+            @else
+                <img src="{{ asset('img/no-image.jpg') }}" class="img-circle" alt="" style="height: 250px; width: 250px;">
+            @endif
+
         </div>
         <div class="col-md-2">
             <h4 style="padding-bottom: 15px"><strong>NAME </strong></h4>
@@ -22,11 +27,11 @@
             <h4 style="padding-bottom: 15px"><strong>PHONE NUMBER </strong></h4>
             <h4 style="padding-bottom: 15px"><strong>ABOUT ME </strong></h4>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
             <h4 style="padding-bottom: 15px"><strong> {{ $users->name }} </strong></h4>
-            <h4 style="padding-bottom: 15px"><strong> {{ $abouts->address }} </strong></h4>
-            <h4 style="padding-bottom: 15px"><strong> {{ $abouts->phone_number }} </strong></h4>
-            <h4 style="padding-bottom: 15px"><strong> {{ $abouts->about_me }} </strong></h4>
+            <h4 style="padding-bottom: 15px"><strong> {{ $abouts->address ?? '' }} </strong></h4>
+            <h4 style="padding-bottom: 15px"><strong> {{ $abouts->phone_number ?? '' }} </strong></h4>
+            <h4 style="padding-bottom: 15px"><strong> {{ $abouts->about_me ?? '' }} </strong></h4>
         </div>
     </div>
 </div>
