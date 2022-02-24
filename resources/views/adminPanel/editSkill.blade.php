@@ -16,13 +16,23 @@
                             <div class="form-group">
                                 <label for="skill" >Skill</label>
                                 <div class="input-addon">
-                                    <input id="skill" type="text" name="skill" class="form-control input-lg input-transparent" placeholder="Skill" value="{{ $skills->skill }}">
+                                    <input id="skill" type="text" name="skill" class="form-control input-lg input-transparent" placeholder="Skill" value="{{ $skills->skill }}" autofocus>
+                                     @error('skill')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="percent" >Percent</label>
                                 <div class="input-addon">
                                     <input id="percent" type="text" name="percent" class="form-control input-lg input-transparent" placeholder="Percent" value="{{ $skills->percent }}">
+                                     @error('percent')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>                       
                         </fieldset>

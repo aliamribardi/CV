@@ -16,25 +16,45 @@
                             <div class="form-group">
                                 <label for="company" >Company</label>
                                 <div class="input-addon">
-                                    <input id="company" type="text" name="company" class="form-control input-lg input-transparent" placeholder="Company" value="{{ $works->company }}">
+                                    <input id="company" type="text" name="company" class="form-control input-lg input-transparent" placeholder="Company" value="{{ $works->company }}" autofocus>
+                                     @error('company')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="position" >Position</label>
                                 <div class="input-addon">
                                     <input id="position" type="text" name="position" class="form-control input-lg input-transparent" placeholder="Position" value="{{ $works->position }}">
+                                     @error('position')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="year_of_entry" >Year Of Entry</label>
                                 <div class="input-addon">
                                     <input id="year_of_entry" type="text" name="year_of_entry" class="form-control input-lg input-transparent" placeholder="Year Of Entry" value="{{ $works->year_of_entry }}">
+                                     @error('year_of_entry')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>    
                             <div class="form-group">
                                 <label for="year_out" >Year Out</label>
                                 <div class="input-addon">
                                     <input id="year_out" type="text" name="year_out" class="form-control input-lg input-transparent" placeholder="Year Out" value="{{ $works->year_out }}">
+                                     @error('year_out')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>                        
                         </fieldset>

@@ -15,13 +15,23 @@
                             <div class="form-group">
                                 <label for="address" >Address</label>
                                 <div class="input-addon">
-                                    <input id="address" type="text" name="address" class="form-control input-lg input-transparent" placeholder="Your Address">
+                                    <input id="address" type="text" name="address" class="form-control input-lg input-transparent" placeholder="Your Address" autofocus>
+                                     @error('address')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="phone_number" >Phone Number</label>
                                 <div class="input-addon">
                                     <input id="phone_number" type="text" name="phone_number" class="form-control input-lg input-transparent" placeholder="Your phone_number">
+                                     @error('phone_number')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
@@ -29,12 +39,22 @@
                                 <div class="input-addon">
                                     <img class="img-preview img-fluid mb-3 col-sm-5">
                                     <input id="image" type="file" name="image" class="form-control input-lg input-transparent" placeholder="Your image" onchange="previewImage()">
+                                     @error('image')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="about_me" >About_me</label>
                                 <div class="input-addon">
                                     <textarea id="about_me" name="about_me" class="form-control input-lg input-transparent" placeholder="Your About Me" style="height: 200px"></textarea>
+                                     @error('about_me')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                         </fieldset>

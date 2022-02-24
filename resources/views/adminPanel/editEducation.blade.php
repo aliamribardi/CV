@@ -16,19 +16,34 @@
                             <div class="form-group">
                                 <label for="school" >School</label>
                                 <div class="input-addon">
-                                    <input id="school" type="text" name="school" class="form-control input-lg input-transparent" placeholder="School" value="{{ $educations->school }}">
+                                    <input id="school" type="text" name="school" class="form-control input-lg input-transparent" placeholder="School" value="{{ $educations->school }}" autofocus>
+                                     @error('school')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="program_study" >Program Study</label>
                                 <div class="input-addon">
                                     <input id="program_study" type="text" name="program_Study" class="form-control input-lg input-transparent" placeholder="Program Study" value="{{ $educations->program_Study }}">
+                                     @error('program_Study')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="year" >Year</label>
                                 <div class="input-addon">
                                     <input id="year" type="text" name="year" class="form-control input-lg input-transparent" placeholder="Year" value="{{ $educations->year }}">
+                                     @error('year')
+                                        <div class="invalid-feedback" style="color:red">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                         </fieldset>
