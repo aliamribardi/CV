@@ -5,11 +5,9 @@
                 <header>
                     <h4>
                         Table <span class="fw-semi-bold">Education</span>
-                        @if (is_null($educationf))
-                            <a href="{{ Route('createEducation') }}" class="pull-right">
-                                <button class="btn btn-default btn-sm mr-md">Add Data</button>
-                            </a>
-                        @endif
+                        <a href="{{ Route('createEducation') }}" class="pull-right">
+                            <button class="btn btn-default btn-sm mr-md">Add Data</button>
+                        </a>
                     </h4>
                 </header>
                 <div class="body">

@@ -34,13 +34,10 @@ class HomeController extends Controller
             'abouts' => About::where('user_id', auth()->user()->id)->first(), 
             'aboutData' => About::where('user_id', auth()->user()->id)->get(),
 
-            'educationf' => Education::where('user_id', auth()->user()->id)->first(),
             'educations' => Education::where('user_id', auth()->user()->id)->get(),
 
-            'workf' => Work::where('user_id', auth()->user()->id)->first(),
             'works' => Work::where('user_id', auth()->user()->id)->get(),
 
-            'skillf' => Skill::where('user_id', auth()->user()->id)->first(),
             'skills' => Skill::where('user_id', auth()->user()->id)->get(),
         ]);
     }

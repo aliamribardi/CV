@@ -96,14 +96,17 @@ class AboutController extends Controller
     public function update(Request $request, About $about)
     {
         // dd($request);
+        $validatedUser = $request->validate([
+            'name' => 'required|max:255',
+        ]);
         $validatedData = $request->validate([
             'address' => 'required|max:255',
             'phone_number' => 'required|max:255',
             'image' => 'image|file|max:2048',
-            'about_me' => 'required|max:255',
+            'about_me' => 'required',
         ]);
 
-        dd($request['name']);
+        // dd($request['name']);
         // dd($request->oldImage);
         if($request->file('image')) {
             if($request->oldImage) {
@@ -116,6 +119,8 @@ class AboutController extends Controller
         // $users['name'] = $request['name'];
         // $users->save();
         
+        User::where('id', $about->id)->update($validatedUser);
+
         About::where('id', $about->id)->update($validatedData);
 
         session()->flash('success', 'data updated successfully');
