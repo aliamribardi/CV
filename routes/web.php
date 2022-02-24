@@ -47,6 +47,13 @@ Route::get('/editSkill/{skill}', [SkillController::class, 'edit'])->name('editSk
 Route::put('/updateSkill/{skill}', [SkillController::class, 'update'])->name('updateSkill');
 
 
+// Front End
+
+Route::get('/coba', function () {
+    return view('front.layouts.app');
+});
+
+
 // Route::get('/coba', function() {
 //     return view('adminPanel.layouts.app');
 // });
