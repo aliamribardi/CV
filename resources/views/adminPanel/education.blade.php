@@ -5,9 +5,11 @@
                 <header>
                     <h4>
                         Table <span class="fw-semi-bold">Education</span>
+                        @if (is_null($educations))
                         <a href="{{ Route('createEducation') }}" class="pull-right">
                             <button class="btn btn-default btn-sm mr-md">Add Data</button>
                         </a>
+                        @endif
                     </h4>
                 </header>
                 <div class="body">
@@ -15,9 +17,9 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>School</th>
-                            <th>Program Study</th>
-                            <th>Year</th>
+                            <th style="width: 400px">School</th>
+                            <th style="width: 300px">Program Study</th>
+                            <th style="width: 200px">Year</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -37,25 +39,9 @@
 
                     </table>
                     <div class="clearfix">
-                        <div class="pull-right">
-                            <button class="btn btn-default btn-sm mr-md">
-                                Send to ...
-                            </button>
-                            <div class="btn-group">
-                                <button class="btn btn-sm btn-inverse dropdown-toggle" data-toggle="dropdown">
-                                    &nbsp; Clear &nbsp;
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#">Clear</a></li>
-                                    <li><a href="#">Move ...</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p>Basic table with styled content</p>
+                        @if (is_null($abouts))
+                            <p>Insert Data</p>
+                        @endif
                     </div>
                 </div>
             </section>
