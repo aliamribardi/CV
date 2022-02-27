@@ -20,7 +20,7 @@ use App\Http\Controllers\EducationController;
 */
 
 Route::get('/', function () {
-    return view('front.welcome');
+    return view('front.layouts.app');
 });
 
 Auth::routes();
@@ -51,6 +51,10 @@ Route::put('/updateSkill/{skill}', [SkillController::class, 'update'])->name('up
 
 Route::get('/coba', function () {
     return view('front.layouts.app');
+});
+
+Route::get('/loginn', function() {
+    return view('auth.loginn');
 });
 
 
