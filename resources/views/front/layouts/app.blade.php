@@ -7,9 +7,9 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Ceevee - Free Responsive HTML5/CSS3 Template</title>
+	<title>CV</title>
 	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="AAB" content="">
 
    <!-- Mobile Specific Metas
    ================================================== -->

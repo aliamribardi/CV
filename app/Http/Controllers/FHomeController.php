@@ -7,9 +7,9 @@ use App\Models\User;
 
 class FHomeController extends Controller
 {
-    public function index () {
+    public function index (User $id) {
         return view('front.layouts.app', [
-            'banners' => User::get()->first(),
+            'banners' => $id,
         ]);
     }
 }
