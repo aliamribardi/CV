@@ -9,7 +9,7 @@ class FHomeController extends Controller
 {
     public function index () {
         return view('front.layouts.app', [
-            'banners' => User::get('name')->first(),
+            'banners' => User::get()->first(),
         ]);
     }
 }
