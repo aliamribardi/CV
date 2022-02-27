@@ -7,6 +7,7 @@ use App\Http\Controllers\WorkController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\FHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,9 @@ use App\Http\Controllers\EducationController;
 |
 */
 
-Route::get('/', function () {
-    return view('front.layouts.app');
-});
+// Route::get('/', function () {
+//     return view('front.layouts.app');
+// });
 
 Auth::routes();
 
@@ -49,13 +50,15 @@ Route::put('/updateSkill/{skill}', [SkillController::class, 'update'])->name('up
 
 // Front End
 
-Route::get('/coba', function () {
-    return view('front.layouts.app');
-});
+Route::get('/', [FHomeController::class, 'index'])->name('IndexHome');
 
-Route::get('/loginn', function() {
-    return view('auth.loginn');
-});
+// Route::get('/coba', function () {
+//     return view('front.layouts.app');
+// });
+
+// Route::get('/loginn', function() {
+//     return view('auth.loginn');
+// });
 
 
 // Route::get('/coba', function() {
