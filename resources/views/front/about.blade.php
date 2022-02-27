@@ -4,7 +4,7 @@
 
         <div class="three columns">
 
-        <img class="profile-pic"  src="{{ asset('front/images/profilepic.jpg') }}" alt="" />
+        <img class="profile-pic"  src="{{ asset('storage/' . $abouts->image) }}" alt="" />
 
         </div>
 
@@ -21,11 +21,9 @@
                 <h2>Contact Details</h2>
                 <p class="address">
                         <span>{{ $banners->name }}</span><br>
-                        <span>1600 Amphitheatre Parkway<br>
-                                Mountain View, CA 94043 US
-                    </span><br>
+                        <span>{{ $abouts->address }}</span><br>
                         <span>{{ $abouts->phone_number }}</span><br>
-                    <span>anyone@website.com</span>
+                    {{-- <span>anyone@website.com</span> --}}
                     </p>
 
             </div>

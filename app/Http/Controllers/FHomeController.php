@@ -11,7 +11,7 @@ class FHomeController extends Controller
     public function index (User $id) {
         return view('front.layouts.app', [
             'banners' => $id,
-            'abouts' => About::first(),
+            'abouts' => About::get()->first(),
         ]);
     }
 }
