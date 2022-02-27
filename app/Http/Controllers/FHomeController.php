@@ -16,6 +16,7 @@ class FHomeController extends Controller
             'abouts' => About::find($id),
             'educations' => Education::find($id),
             'works' => Work::find($id),
+            'skills' => Skill::find($id),
         ]);
     }
 }
