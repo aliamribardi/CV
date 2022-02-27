@@ -14,33 +14,8 @@
 
             <div class="twelve columns">
 
-                <h3>{{ $educations }}</h3>
-                <p class="info">Master in Graphic Design <span>&bull;</span> <em class="date">April 2007</em></p>
-
-                <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
-                </p>
-
-            </div>
-
-        </div> <!-- item end -->
-
-        <div class="row item">
-
-            <div class="twelve columns">
-
-                <h3>School of Cool Designers</h3>
-                <p class="info">B.A. Degree in Graphic Design <span>&bull;</span> <em class="date">March 2003</em></p>
-
-                <p>
-                This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat
-                </p>
+                <h3>{{ $educations[0]->school ?? 'No Data' }}</h3>
+                <p class="info"> {{ $educations[0]->program_Study ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $educations[0]->year ?? 'No Data' }}</em></p>
 
             </div>
 
