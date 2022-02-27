@@ -14,7 +14,7 @@
 
             <div class="twelve columns">
 
-                <h3>University of Life</h3>
+                <h3>{{ $educations }}</h3>
                 <p class="info">Master in Graphic Design <span>&bull;</span> <em class="date">April 2007</em></p>
 
                 <p>

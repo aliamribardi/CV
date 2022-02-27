@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Education;
 
 class FHomeController extends Controller
 {
@@ -12,6 +13,7 @@ class FHomeController extends Controller
         return view('front.layouts.app', [
             'banners' => $id,
             'abouts' => About::find($id),
+            'educations' => Education::find($id),
         ]);
     }
 }
