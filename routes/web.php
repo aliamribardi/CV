@@ -50,7 +50,7 @@ Route::put('/updateSkill/{skill}', [SkillController::class, 'update'])->name('up
 
 // Front End
 
-Route::get('/{id:username}', [FHomeController::class, 'index'])->name('IndexHome');
+Route::get('/{user:username}', [FHomeController::class, 'index'])->name('IndexHome');
 Route::get('/', [FHomeController::class, 'index']);
 
 // Route::get('/coba', function () {
