@@ -4,7 +4,7 @@
 
         <div class="three columns">
 
-        <img class="profile-pic"  src="{{ asset('storage/' . $abouts[0]->image) }}" alt="" />
+        <img class="profile-pic"  src="{{ asset('storage/' . $abouts->image) }}" alt="" />
 
         </div>
 
@@ -12,7 +12,7 @@
 
         <h2>About Me</h2>
 
-        <p>{{ $abouts[0]->about_me }}</p>
+        <p>{{ $abouts->about_me }}</p>
 
         <div class="row">
 
@@ -21,8 +21,8 @@
                 <h2>Contact Details</h2>
                 <p class="address">
                         <span>{{ $banners->name }}</span><br>
-                        <span>{{ $abouts[0]->address }}</span><br>
-                        <span>{{ $abouts[0]->phone_number }}</span><br>
+                        <span>{{ $abouts->address }}</span><br>
+                        <span>{{ $abouts->phone_number }}</span><br>
                     {{-- <span>anyone@website.com</span> --}}
                     </p>
 
