@@ -65,7 +65,7 @@
             <div class="bars">
 
                 <ul class="skills">
-                    <li><span class="" data-width="50%" style="width: 0"></span><em>{{ $skills->skill }}</em></li>
+                    <li><span class="bar-expand" style="width: {{ $skills->percent . '%' }}"></span><em>{{ $skills->skill ?? 'No Data' }}</em></li>
                 </ul>
 
             </div><!-- end skill-bars -->
