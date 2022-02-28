@@ -27,6 +27,7 @@ use App\Http\Controllers\FHomeController;
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/createAbout', [AboutController::class, 'create'])->name('createAbout');
 Route::post('/storeAbout', [AboutController::class, 'store'])->name('storeAbout');
 Route::get('/editAbout/{about}', [AboutController::class, 'edit'])->name('editAbout');
