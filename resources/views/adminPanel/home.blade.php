@@ -27,4 +27,8 @@
 @include('adminPanel.skill')
 {{-- End Skill --}}
 
+{{-- My Work --}}
+@include('adminPanel.myWork')
+{{-- End My Work --}}
+
 @endsection

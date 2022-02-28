@@ -8,6 +8,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\FHomeController;
+use App\Http\Controllers\MyWorkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,8 @@ Route::get('/createSkill', [SkillController::class, 'create'])->name('createSkil
 Route::post('/storeSkill', [SkillController::class, 'store'])->name('storeSkill');
 Route::get('/editSkill/{skill}', [SkillController::class, 'edit'])->name('editSkill');
 Route::put('/updateSkill/{skill}', [SkillController::class, 'update'])->name('updateSkill');
+
+Route::get('/createmyWork', [MyWorkController::class, 'create'])->name('createmyWork');
 
 
 // Front End

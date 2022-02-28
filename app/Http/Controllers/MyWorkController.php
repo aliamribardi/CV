@@ -24,7 +24,7 @@ class MyWorkController extends Controller
      */
     public function create()
     {
-        //
+        return view('adminPanel.createMyWork');
     }
 
     /**
