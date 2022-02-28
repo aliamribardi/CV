@@ -70,20 +70,6 @@
    <!-- Portfolio Section End-->
 
 
-   <!-- Call-To-Action Section
-   ================================================== -->
-   @include('front.call-to-action') 
-   
-   <!-- Call-To-Action Section End-->
-
-
-   <!-- Testimonials Section
-   ================================================== -->
-   @include('front.testimonials') 
-   
-   <!-- Testimonials Section End-->
-
-
    <!-- Contact Section
    ================================================== -->
    @include('front.contact') 
