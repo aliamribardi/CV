@@ -4,7 +4,7 @@
 
         <div class="three columns">
 
-        {{-- <img class="profile-pic"  src="{{ asset('storage/' . $abouts->image ) }}" alt="" /> --}}
+        <img class="profile-pic"  src="{{ asset('storage/' . $abouts->image ) }}" alt="" />
 
         </div>
 
