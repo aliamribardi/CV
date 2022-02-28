@@ -16,9 +16,9 @@ class FHomeController extends Controller
         return view('front.layouts.app', [
             'banners' => $id,
             'abouts' => About::where('user_id', $id->id)->first(),
-            'educations' => Education::find($id),
-            'works' => Work::find($id),
-            'skills' => Skill::find($id),
+            'educations' => Education::where('user_id', $id->id)->first(),
+            'works' => Work::where('user_id', $id->id)->first(),
+            'skills' => Skill::where('user_id', $id->id)->first(),
         ]);
     }
 }
