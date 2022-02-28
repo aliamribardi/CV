@@ -12,14 +12,10 @@
 
         <div class="row item">
             @foreach ($educations as $education)
-                
-            <div class="twelve columns">
-                
-                <h3>{{ $education->school ?? 'No Data' }}</h3>
-                <p class="info"> {{ $education->program_Study ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $education->year ?? 'No Data' }}</em></p>
-                
-            </div>
-            
+                <div class="twelve columns">
+                    <h3>{{ $education->school ?? 'No Data' }}</h3>
+                    <p class="info"> {{ $education->program_Study ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $education->year ?? 'No Data' }}</em></p>
+                </div>
             @endforeach
         </div> <!-- item end -->
 
@@ -39,14 +35,12 @@
         <div class="nine columns main-col">
 
         <div class="row item">
-
-            <div class="twelve columns">
-
-                <h3>{{ $works->company ?? 'No Data' }}</h3>
-                <p class="info">{{ $works->position ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $works->year_of_entry ?? 'No Data' }} - {{ $works->year_out ?? 'Present' }}</em></p>
-
-            </div>
-
+            @foreach ($works as $work)
+                <div class="twelve columns">
+                    <h3>{{ $work->company ?? 'No Data' }}</h3>
+                    <p class="info">{{ $work->position ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $work->year_of_entry ?? 'No Data' }} - {{ $work->year_out ?? 'Present' }}</em></p>
+                </div>
+            @endforeach
         </div> <!-- item end -->
 
         </div> <!-- main-col end -->
@@ -63,15 +57,13 @@
         </div>
 
         <div class="nine columns main-col">
-
-            <div class="bars">
-
-                <ul class="skills">
-                    <li><span class="bar-expand" style="width: {{ $skills->percent . '%' }}"></span><em>{{ $skills->skill ?? 'No Data' }}</em></li>
-                </ul>
-
-            </div><!-- end skill-bars -->
-
+            @foreach ($skills as $skill)
+                <div class="bars">
+                    <ul class="skills">
+                        <li><span class="bar-expand" style="width: {{ $skill->percent . '%' }}"></span><em>{{ $skill->skill ?? 'No Data' }}</em></li>
+                    </ul>
+                </div><!-- end skill-bars -->
+            @endforeach
         </div> <!-- main-col end -->
 
     </div> <!-- End skills -->
