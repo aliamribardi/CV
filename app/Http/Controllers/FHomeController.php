@@ -11,13 +11,11 @@ use App\Models\Skill;
 
 class FHomeController extends Controller
 {
-    public function index ($id) 
+    public function index (User $id) 
     {
-        $ab = $id;
-        $id = User::find($id);
         return view('front.layouts.app', [
             'banners' => $id,
-            'abouts' => About::where('user_id', $ab)->first(),
+            'abouts' => About::where('user_id', $id->id)->first(),
             'educations' => Education::find($id),
             'works' => Work::find($id),
             'skills' => Skill::find($id),
