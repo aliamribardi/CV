@@ -14,8 +14,8 @@
 
             <div class="twelve columns">
 
-                <h3>{{ $educations[0]->school ?? 'No Data' }}</h3>
-                <p class="info"> {{ $educations[0]->program_Study ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $educations[0]->year ?? 'No Data' }}</em></p>
+                <h3>{{ $educations->school ?? 'No Data' }}</h3>
+                <p class="info"> {{ $educations->program_Study ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $educations->year ?? 'No Data' }}</em></p>
 
             </div>
 
@@ -40,8 +40,8 @@
 
             <div class="twelve columns">
 
-                <h3>{{ $works[0]->company ?? 'No Data' }}</h3>
-                <p class="info">{{ $works[0]->position ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $works[0]->year_of_entry ?? 'No Data' }} - {{ $works[0]->year_out ?? 'Present' }}</em></p>
+                <h3>{{ $works->company ?? 'No Data' }}</h3>
+                <p class="info">{{ $works->position ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $works->year_of_entry ?? 'No Data' }} - {{ $works->year_out ?? 'Present' }}</em></p>
 
             </div>
 
@@ -65,7 +65,7 @@
             <div class="bars">
 
                 <ul class="skills">
-                    <li><span class="" data-width="50%" style="width: 0"></span><em>{{ $skills[0]->skill }}</em></li>
+                    <li><span class="" data-width="50%" style="width: 0"></span><em>{{ $skills->skill }}</em></li>
                 </ul>
 
             </div><!-- end skill-bars -->
