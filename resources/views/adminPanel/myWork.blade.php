@@ -15,20 +15,24 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th style="width: 500px">Name</th>
-                            <th style="width: 400px">Image</th>
+                            <th style="width: 700px">Project</th>
+                            <th style="width: 200px">Image</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach ($myworks as $mywork)
                         <tr>
-                            <td>aaa</td>
-                            <td>aaa</td>
-                            <td>aaa</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $mywork->name }}</td>
+                            <td>
+                                <img src="{{ asset('storage/' . $mywork->image) }}" alt="" style="height: 50px; width: 50px">
+                            </td>
                             <td>
                                 <a href="#"><i class="btn btn-default btn-sm mr-md glyphicon glyphicon-edit"></i></a>
                             </td>
                         </tr>
+                        @endforeach
                         </tbody>
 
                     </table>

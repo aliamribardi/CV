@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MyWork;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class MyWorkController extends Controller
@@ -35,7 +36,22 @@ class MyWorkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'image' => 'image|file|max:2048',
+        ]);
+
+        if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('my-work-image');
+        }
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        MyWork::create($validatedData);
+
+        session()->flash('success', 'project added successfully');
+
+        return redirect()->route('home');
     }
 
     /**

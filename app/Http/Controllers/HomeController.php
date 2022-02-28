@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\Education;
+use App\Models\MyWork;
 use App\Models\Work;
 use App\Models\Skill;
 use App\Models\User;
@@ -39,6 +40,8 @@ class HomeController extends Controller
             'works' => Work::where('user_id', auth()->user()->id)->get(),
 
             'skills' => Skill::where('user_id', auth()->user()->id)->get(),
+
+            'myworks' => MyWork::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 }

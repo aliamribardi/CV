@@ -9,7 +9,7 @@
         <div class="col-md-11">
             <section class="widget">
                 <div class="body">
-                    <form class="no-margin" action="#" method="POST">
+                    <form class="no-margin" action="{{ Route('storemyWork') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <fieldset>
                             <div class="form-group">
