@@ -27,7 +27,9 @@
                             <div class="form-group">
                                 <label for="image" >Image</label>
                                 <div class="input-addon">
-                                    <input id="image" type="file" name="image" class="form-control input-lg input-transparent" placeholder="Your Image">
+                                    <input type="hidden" name="oldImage" value="{{ $mywork->image }}">
+                                    <img class="img-preview img-fluid mb-3 col-sm-5">   
+                                    <input id="image" type="file" name="image" class="form-control input-lg input-transparent" onchange="previewImage()">
                                      @error('image')
                                         <div class="invalid-feedback" style="color:red">
                                             <strong>{{ $message }}</strong>
@@ -48,5 +50,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    function previewImage() {
+            const image = document.querySelector('#image');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+</script>
+    
     
 @endsection

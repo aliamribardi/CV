@@ -87,7 +87,25 @@ class MyWorkController extends Controller
      */
     public function update(Request $request, MyWork $myWork)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'image' => 'image|file|max:2048',
+        ]);
+
+        if($request->file('image')) 
+        {
+            if($request->oldImage) 
+            {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('my-work-image');
+        }
+
+        MyWork::where('id', $myWork->id)->update($validatedData);
+
+        session()->flash('success', 'project updated successfully');
+
+        return redirect()->route('home');
     }
 
     /**
