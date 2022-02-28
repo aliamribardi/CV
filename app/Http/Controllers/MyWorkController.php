@@ -73,7 +73,9 @@ class MyWorkController extends Controller
      */
     public function edit(MyWork $myWork)
     {
-        //
+        return view('adminPanel.editMyWork', [
+            'mywork' => $myWork,
+        ]);
     }
 
     /**

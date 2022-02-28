@@ -29,7 +29,7 @@
                                 <img src="{{ asset('storage/' . $mywork->image) }}" alt="" style="height: 50px; width: 50px">
                             </td>
                             <td>
-                                <a href="#"><i class="btn btn-default btn-sm mr-md glyphicon glyphicon-edit"></i></a>
+                                <a href="{{ Route('editmyWork', $mywork->id) }}"><i class="btn btn-default btn-sm mr-md glyphicon glyphicon-edit"></i></a>
                             </td>
                         </tr>
                         @endforeach
