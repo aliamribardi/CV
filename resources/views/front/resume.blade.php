@@ -11,14 +11,16 @@
         <div class="nine columns main-col">
 
         <div class="row item">
-
+            @foreach ($educations as $education)
+                
             <div class="twelve columns">
-
-                <h3>{{ $educations->school ?? 'No Data' }}</h3>
-                <p class="info"> {{ $educations->program_Study ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $educations->year ?? 'No Data' }}</em></p>
-
+                
+                <h3>{{ $education->school ?? 'No Data' }}</h3>
+                <p class="info"> {{ $education->program_Study ?? 'No Data' }} <span>&bull;</span> <em class="date">{{ $education->year ?? 'No Data' }}</em></p>
+                
             </div>
-
+            
+            @endforeach
         </div> <!-- item end -->
 
         </div> <!-- main-col end -->
