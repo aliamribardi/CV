@@ -64,7 +64,7 @@
                 </div>
                 <footer>
                     <div class="facebook-login">
-                        <a href="index.html"><span><i class="fa fa-facebook-square fa-lg"></i> LogIn with Facebook</span></a>
+                        <a href="{{ Route('register') }}"><span><i class=""></i> Register</span></a>
                     </div>
                 </footer>
             </section>
