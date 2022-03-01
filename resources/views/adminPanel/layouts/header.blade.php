@@ -6,6 +6,7 @@
                     <i class="fa fa-search"></i>
                 </a>
             </li>
+            @if (!Route::is('Contact'))
             <li class="dropdown">
                 <a href="#" title="Messages" id="messages" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="glyphicon glyphicon-comment"></i>
@@ -33,6 +34,7 @@
                     </li>
                 </ul>
             </li>
+            @endif
             <li class="divider"></li>
             <li class="hidden-xs">
                 <a href="#" id="settings" title="Settings" data-toggle="popover" data-placement="bottom">

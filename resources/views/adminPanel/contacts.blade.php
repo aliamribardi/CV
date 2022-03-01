@@ -35,7 +35,7 @@
                             <td>{{ $contact->subject }}</td>
                             <td>{{ Illuminate\Support\Str::substr($contact->message, 0, 60) }}...</td>
                             <td>
-                                <a href="#"><i class="btn btn-default btn-sm mr-md glyphicon glyphicon-edit"></i></a>
+                                <a href="#"><i class="btn btn-default btn-sm mr-md fa fa-eye"></i></a>
                             </td>
                         </tr>
                         @endforeach
