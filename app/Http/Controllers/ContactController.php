@@ -14,7 +14,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('adminPanel.contacts', [
+            'contacts' => Contact::where('user_id', auth()->user()->id)->get(),
+        ]);
     }
 
     /**

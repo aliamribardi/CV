@@ -19,6 +19,7 @@
                             <div class="details">
                                 <div class="sender">{{ $contact->name }}</div>
                                 <div class="text">
+                                    {{-- Illuminate\Support\Str::substr($contact->message, 0, 50) = membatasi karakter yang tampil --}}
                                     {{ Illuminate\Support\Str::substr($contact->message, 0, 50) }} ...
                                 </div>
                             </div>
@@ -26,7 +27,7 @@
                     </li>
                     @endforeach
                     <li role="presentation">
-                        <a href="#" class="text-align-center see-all">
+                        <a href="{{ Route('Contact') }}" class="text-align-center see-all">
                             See all messages <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>

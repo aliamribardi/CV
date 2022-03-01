@@ -56,10 +56,12 @@ Route::post('/storemyWork', [MyWorkController::class, 'store'])->name('storemyWo
 Route::get('/editmyWork/{myWork}', [MyWorkController::class, 'edit'])->name('editmyWork');
 Route::put('/updatemyWork/{myWork}', [MyWorkController::class, 'update'])->name('updatemyWork');
 
-Route::post('/sentMessage', [FContactController::class, 'store'])->name('sentMessage');
+Route::get('/contact', [ContactController::class, 'index'])->name('Contact');
+
 
 // Front End
 
+Route::post('/sentMessage', [FContactController::class, 'store'])->name('sentMessage');
 Route::get('/{user:username}', [FHomeController::class, 'index'])->name('IndexHome');
 Route::get('/', [FHomeController::class, 'index']);
 
