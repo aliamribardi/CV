@@ -52,6 +52,7 @@ Route::put('/updateSkill/{skill}', [SkillController::class, 'update'])->name('up
 Route::get('/createmyWork', [MyWorkController::class, 'create'])->name('createmyWork');
 Route::post('/storemyWork', [MyWorkController::class, 'store'])->name('storemyWork');
 Route::get('/editmyWork/{myWork}', [MyWorkController::class, 'edit'])->name('editmyWork');
+Route::put('/updatemyWork/{myWork}', [MyWorkController::class, 'update'])->name('updatemyWork');
 
 
 // Front End

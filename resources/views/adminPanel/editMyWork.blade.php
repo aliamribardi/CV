@@ -9,7 +9,7 @@
         <div class="col-md-11">
             <section class="widget">
                 <div class="body">
-                    <form class="no-margin" action="#" method="POST" enctype="multipart/form-data">
+                    <form class="no-margin" action="{{ Route('updatemyWork', $mywork->id) }}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <fieldset>
