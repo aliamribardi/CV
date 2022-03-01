@@ -5,33 +5,34 @@
         <div class="eight columns">
 
             <!-- form -->
-            <form action="" method="post" id="contactForm" name="contactForm">
+            <form action="{{ Route('sentMessage') }}" method="POST" name="contactForm">
+                @csrf
                 <fieldset>
 
                 <div>
                         <label for="contactName">Name <span class="required">*</span></label>
-                        <input type="text" value="" size="35" id="contactName" name="contactName">
+                        <input type="text" value="" size="35" id="contactName" name="name">
                 </div>
 
                 <div>
                         <label for="contactEmail">Email <span class="required">*</span></label>
-                        <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+                        <input type="text" value="" size="35" id="contactEmail" name="email">
                 </div>
 
                 <div>
                         <label for="contactSubject">Subject</label>
-                        <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+                        <input type="text" value="" size="35" id="contactSubject" name="subject">
                 </div>
 
                 <div>
                     <label for="contactMessage">Message <span class="required">*</span></label>
-                    <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                    <textarea cols="50" rows="15" id="contactMessage" name="message"></textarea>
                 </div>
 
                 <div>
-                    <button class="submit">Submit</button>
+                    <button type="submit" class="submit">Submit</button>
                     <span id="image-loader">
-                    <img alt="" src="images/loader.gif">
+                    <img alt="" src="{{ asset('front/images/loader.gif') }}">
                     </span>
                 </div>
 

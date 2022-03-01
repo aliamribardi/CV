@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\FContactController;
 use App\Http\Controllers\FHomeController;
 use App\Http\Controllers\MyWorkController;
 
@@ -54,6 +56,7 @@ Route::post('/storemyWork', [MyWorkController::class, 'store'])->name('storemyWo
 Route::get('/editmyWork/{myWork}', [MyWorkController::class, 'edit'])->name('editmyWork');
 Route::put('/updatemyWork/{myWork}', [MyWorkController::class, 'update'])->name('updatemyWork');
 
+Route::post('/sentMessage', [FContactController::class, 'store'])->name('sentMessage');
 
 // Front End
 
