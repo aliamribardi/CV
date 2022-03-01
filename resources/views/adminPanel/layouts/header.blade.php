@@ -11,105 +11,23 @@
                     <i class="glyphicon glyphicon-comment"></i>
                 </a>
                 <ul id="messages-menu" class="dropdown-menu messages" role="menu">
+                    @foreach ($contacts as $contact)
                     <li role="presentation">
-                        <a href="#" class="message">
-                            <img src="adminPanel/img/1.png" alt="">
+                        {{-- <a href="#" class="message"> --}}
+                        <a href="#" class="">
+                            {{-- <img src="adminPanel/img/1.png" alt=""> --}}
                             <div class="details">
-                                <div class="sender">Jane Hew</div>
+                                <div class="sender">{{ $contact->name }}</div>
                                 <div class="text">
-                                    Hey, John! How is it going? ...
+                                    {{ Illuminate\Support\Str::substr($contact->message, 0, 50) }} ...
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li role="presentation">
-                        <a href="#" class="message">
-                            <img src="adminPanel/img/2.png" alt="">
-                            <div class="details">
-                                <div class="sender">Alies Rumiancaŭ</div>
-                                <div class="text">
-                                    I'll definitely buy this template
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#" class="message">
-                            <img src="adminPanel/img/3.png" alt="">
-                            <div class="details">
-                                <div class="sender">Michał Rumiancaŭ</div>
-                                <div class="text">
-                                    Is it really Lore ipsum? Lore ...
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                    @endforeach
                     <li role="presentation">
                         <a href="#" class="text-align-center see-all">
                             See all messages <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" title="8 support tickets" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-globe"></i>
-                    <span class="count">8</span>
-                </a>
-                <ul id="support-menu" class="dropdown-menu support" role="menu">
-                    <li role="presentation">
-                        <a href="#" class="support-ticket">
-                            <div class="picture">
-                                <span class="label label-important"><i class="fa fa-bell-o"></i></span>
-                            </div>
-                            <div class="details">
-                                Check out this awesome ticket
-                            </div>
-                        </a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#" class="support-ticket">
-                            <div class="picture">
-                                <span class="label label-warning"><i class="fa fa-question-circle"></i></span>
-                            </div>
-                            <div class="details">
-                                "What is the best way to get ...
-                            </div>
-                        </a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#" class="support-ticket">
-                            <div class="picture">
-                                <span class="label label-success"><i class="fa fa-tag"></i></span>
-                            </div>
-                            <div class="details">
-                                This is just a simple notification
-                            </div>
-                        </a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#" class="support-ticket">
-                            <div class="picture">
-                                <span class="label label-info"><i class="fa fa-info-circle"></i></span>
-                            </div>
-                            <div class="details">
-                                12 new orders has arrived today
-                            </div>
-                        </a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#" class="support-ticket">
-                            <div class="picture">
-                                <span class="label label-important"><i class="fa fa-plus"></i></span>
-                            </div>
-                            <div class="details">
-                                One more thing that just happened
-                            </div>
-                        </a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#" class="text-align-center see-all">
-                            See all tickets <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
                 </ul>
@@ -163,15 +81,15 @@
                     @csrf
                 </form></li>
         </ul>
-        <form id="search-form" class="navbar-form pull-right" role="search">
+        {{-- <form id="search-form" class="navbar-form pull-right" role="search">
             <input type="search" class="form-control search-query" placeholder="Search...">
-        </form>
-        <div class="notifications pull-right">
+        </form> --}}
+        {{-- <div class="notifications pull-right">
             <div class="alert pull-right">
                 <a href="#" class="close ml-xs" data-dismiss="alert">&times;</a>
                 <i class="fa fa-info-circle mr-xs"></i> Check out Light Blue <a id="notification-link"
                     href="#">settings</a> on the right!
             </div>
-        </div>
+        </div> --}}
     </div>
 </header>

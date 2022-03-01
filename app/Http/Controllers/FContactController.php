@@ -49,7 +49,7 @@ class FContactController extends Controller
 
         session()->flash('success', 'message sent successfully');
 
-        return redirect()->route('home');
+        return redirect()->back();
     }
 
     /**

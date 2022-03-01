@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\About;
+use App\Models\Contact;
 use App\Models\Education;
 use App\Models\MyWork;
 use App\Models\Work;
@@ -42,6 +43,9 @@ class HomeController extends Controller
             'skills' => Skill::where('user_id', auth()->user()->id)->get(),
 
             'myworks' => MyWork::where('user_id', auth()->user()->id)->get(),
+            // latest('id) = mengurutkan dari data yang terakhir ditambah
+            // limit(2) = membatasi data yang tampil
+            'contacts' => Contact::where('user_id', auth()->user()->id)->latest('id')->limit(2)->get(),
         ]);
     }
 }
