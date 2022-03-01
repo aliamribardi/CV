@@ -15,7 +15,7 @@
                     @foreach ($contacts as $contact)
                     <li role="presentation">
                         {{-- <a href="#" class="message"> --}}
-                        <a href="#" class="">
+                        <a href="{{ Route('showContact', $contact->id) }}" class="">
                             {{-- <img src="adminPanel/img/1.png" alt=""> --}}
                             <div class="details">
                                 <div class="sender">{{ $contact->name }}</div>
