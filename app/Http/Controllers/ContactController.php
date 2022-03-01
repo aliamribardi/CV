@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -49,7 +50,11 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        return view('adminPanel.detailContact', [
+            'contactt' => $contact,
+            'contacts' => Contact::where('user_id', auth()->user()->id)->Limit(2)->get(),
+
+        ]);
     }
 
     /**

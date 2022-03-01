@@ -57,6 +57,7 @@ Route::get('/editmyWork/{myWork}', [MyWorkController::class, 'edit'])->name('edi
 Route::put('/updatemyWork/{myWork}', [MyWorkController::class, 'update'])->name('updatemyWork');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('Contact');
+Route::get('/contact/show/{contact}', [ContactController::class, 'show'])->name('showContact');
 
 
 // Front End
