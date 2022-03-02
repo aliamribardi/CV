@@ -15,6 +15,10 @@
 @include('adminPanel.about')
 {{-- End About --}}
 
+{{-- About --}}
+@include('adminPanel.socialMedia')
+{{-- End About --}}
+
 {{-- Education --}}
 @include('adminPanel.education')
 {{-- End Education --}}

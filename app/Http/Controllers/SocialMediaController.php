@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class SocialMediaController extends Controller
 {
@@ -24,7 +25,9 @@ class SocialMediaController extends Controller
      */
     public function create()
     {
-        //
+        return view('adminPanel.createSocialMedia', [
+            'contacts' => Contact::where('user_id', auth()->user()->id)->Limit(2)->get(),
+        ]);
     }
 
     /**

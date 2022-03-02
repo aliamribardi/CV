@@ -11,6 +11,7 @@ use App\Http\Controllers\EducationController;
 use App\Http\Controllers\FContactController;
 use App\Http\Controllers\FHomeController;
 use App\Http\Controllers\MyWorkController;
+use App\Http\Controllers\SocialMediaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,8 @@ Route::put('/updatemyWork/{myWork}', [MyWorkController::class, 'update'])->name(
 
 Route::get('/contact', [ContactController::class, 'index'])->name('Contact');
 Route::get('/contact/show/{contact}', [ContactController::class, 'show'])->name('showContact');
+
+Route::get('/createSosmed', [SocialMediaController::class, 'create'])->name('createSosmed');
 
 
 // Front End
