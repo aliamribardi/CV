@@ -14,7 +14,7 @@
                 <div class="item-wrap">
                     
                     <a href="#modal-01" title="">
-                        <img alt="" src="{{ asset('storage/' . $mywork->image) }}">
+                        <img alt="" src="{{ asset('storage/' . $mywork->image) ?? 'nodata' }}">
                         <div class="overlay">
                             <div class="portfolio-item-meta">
                                 <h5>{{ $mywork->name }}</h5>
@@ -42,7 +42,7 @@
             <img class="scale-with-grid" src="images/portfolio/modals/m-coffee.jpg" alt="" />
 
             <div class="description-box">
-                <h4>{{ $mywork->name }}</h4>
+                <h4>{{ $mywork->name ?? '' }}</h4>
                 <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
             <span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>
             </div>

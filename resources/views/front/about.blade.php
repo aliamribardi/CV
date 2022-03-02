@@ -3,8 +3,12 @@
     <div class="row">
 
         <div class="three columns">
-
-        <img class="profile-pic"  src="{{ asset('storage/' . $abouts->image ) }}" alt="" />
+        
+        @if (!is_null($abouts))
+            <img class="profile-pic"  src="{{ asset('storage/' . $abouts->image ) }}" alt="" />
+        @else
+            <img src="{{ asset('img/no-image.jpg') }}" class="profile-pic" alt="">
+        @endif
 
         </div>
 
