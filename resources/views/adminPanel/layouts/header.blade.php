@@ -87,12 +87,12 @@
         {{-- <form id="search-form" class="navbar-form pull-right" role="search">
             <input type="search" class="form-control search-query" placeholder="Search...">
         </form> --}}
-        {{-- <div class="notifications pull-right">
-            <div class="alert pull-right">
-                <a href="#" class="close ml-xs" data-dismiss="alert">&times;</a>
-                <i class="fa fa-info-circle mr-xs"></i> Check out Light Blue <a id="notification-link"
-                    href="#">settings</a> on the right!
-            </div>
-        </div> --}}
+        <div class="notifications pull-right">
+            @if (Route::is('home'))
+                <div class="alert pull-right">
+                    <a href="{{ Route('IndexHome', $users->username) }}" target="__blank" data-dismiss="alert">Open Curriculum Vitae</a>
+                </div>
+            @endif
+        </div>
     </div>
 </header>

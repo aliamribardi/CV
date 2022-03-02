@@ -9,6 +9,7 @@ use App\Models\Education;
 use App\Models\MyWork;
 use App\Models\Work;
 use App\Models\Skill;
+use App\Models\SocialMedia;
 use App\Models\User;
 
 class HomeController extends Controller
@@ -46,6 +47,8 @@ class HomeController extends Controller
             // latest('id) = mengurutkan dari data yang terakhir ditambah
             // limit(2) = membatasi data yang tampil
             'contacts' => Contact::where('user_id', auth()->user()->id)->latest('id')->limit(2)->get(),
+
+            'sosmeds' => SocialMedia::where('user_id', auth()->user()->id)->first(),
         ]);
     }
 }

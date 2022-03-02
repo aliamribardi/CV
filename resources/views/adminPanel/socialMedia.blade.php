@@ -25,17 +25,46 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{-- @foreach ($educations as $education)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $education->school }}</td>
-                            <td>{{ $education->program_Study }}</td>
-                            <td>{{ $education->year }}</td>
                             <td>
-                                <a href="{{ Route('editEducation', $education->id) }}"><i class="btn btn-default btn-sm mr-md glyphicon glyphicon-edit"></i></a>
+                                @if (!is_null($sosmeds->facebook))
+                                    <a href="{{ $sosmeds->facebook }}" target="__blank"><i class="btn btn-default btn-sm mr-md fa fa-facebook"></i></a>
+                                @endif
+                            </td>
+                            <td>
+                                @if (!is_null($sosmeds->twitter))
+                                    <a href="{{ $sosmeds->twitter }}" target="__blank"><i class="btn btn-default btn-sm mr-md fa fa-twitter"></i></a>
+                                @endif
+                            </td>
+                            <td>
+                                @if (!is_null($sosmeds->google_plus))
+                                    <a href="{{ $sosmeds->google_plus }}" target="__blank"><i class="btn btn-default btn-sm mr-md fa fa-google-plus"></i></a>
+                                @endif
+                            </td>
+                            <td>
+                                @if (!is_null($sosmeds->linkedin))
+                                    <a href="{{ $sosmeds->linkedin }}" target="__blank"><i class="btn btn-default btn-sm mr-md fa fa-linkedin"></i></a>
+                                @endif
+                            </td>
+                            <td>
+                                @if (!is_null($sosmeds->instagram))
+                                    <a href="{{ $sosmeds->instagram }}" target="__blank"><i class="btn btn-default btn-sm mr-md fa fa-instagram"></i></a>
+                                @endif
+                            </td>
+                            <td>
+                                @if (!is_null($sosmeds->dribbble))
+                                    <a href="{{ $sosmeds->dribbble }}" target="__blank"><i class="btn btn-default btn-sm mr-md fa fa-dribbble"></i></a>
+                                @endif
+                            </td>
+                            <td>
+                                @if (!is_null($sosmeds->skype))
+                                    <a href="{{ $sosmeds->skype }}" target="__blank"><i class="btn btn-default btn-sm mr-md fa fa-skype"></i></a>
+                                @endif
+                            </td>
+                            <td>
+                                <a href="#"><i class="btn btn-default btn-sm mr-md glyphicon glyphicon-edit"></i></a>
                             </td>
                         </tr>
-                        @endforeach --}}
                         </tbody>
 
                     </table>
