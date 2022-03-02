@@ -6,13 +6,41 @@
     and learn more <a class="smoothscroll" href="#about">about me</a>.</h3> --}}
     <hr />
     <ul class="social">
-        <li><a href="{{ $sosmed->facebook ?? '' }}" target="__blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="{{ $sosmed->twitter ?? '' }}" target="__blank"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="{{ $sosmed->google_plus ?? '' }}" target="__blank"><i class="fa fa-google-plus"></i></a></li>
-        <li><a href="{{ $sosmed->linkedin ?? '' }}" target="__blank"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="{{ $sosmed->instagram ?? '' }}" target="__blank"><i class="fa fa-instagram"></i></a></li>
-        <li><a href="{{ $sosmed->dribbblle ?? '' }}" target="__blank"><i class="fa fa-dribbble"></i></a></li>
-        <li><a href="{{ $sosmed->facebook ?? '' }}" target="__blank"skype><i class="fa fa-skype"></i></a></li>
+        <li>
+            @if (!is_null($sosmed->facebook))
+                <a href="{{ $sosmed->facebook ?? '' }}" target="__blank"><i class="fa fa-facebook"></i></a>
+            @endif
+        </li>
+        <li>
+            @if (!is_null($sosmed->twitter))
+                <a href="{{ $sosmed->twitter ?? '' }}" target="__blank"><i class="fa fa-twitter"></i></a>
+            @endif
+        </li>
+        <li>
+            @if (!is_null($sosmed->google_plus))
+                <a href="{{ $sosmed->google_plus ?? '' }}" target="__blank"><i class="fa fa-google-plus"></i></a>
+            @endif
+        </li>
+        <li>
+            @if (!is_null($sosmed->linkedin))
+                <a href="{{ $sosmed->linkedin ?? '' }}" target="__blank"><i class="fa fa-linkedin"></i></a>
+            @endif
+        </li>
+        <li>
+            @if (!is_null($sosmed->instagram))
+                <a href="{{ $sosmed->instagram ?? '' }}" target="__blank"><i class="fa fa-instagram"></i></a>
+            @endif
+        </li>
+        <li>
+            @if (!is_null($sosmed->dribbble))
+                <a href="{{ $sosmed->dribbblle ?? '' }}" target="__blank"><i class="fa fa-dribbble"></i></a>
+            @endif
+        </li>
+        <li>
+            @if (!is_null($sosmed->skype))
+                <a href="{{ $sosmed->skype ?? '' }}" target="__blank"skype><i class="fa fa-skype"></i></a>
+            @endif
+        </li>
     </ul>
     </div>
 </div>
