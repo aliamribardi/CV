@@ -61,6 +61,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('Contact');
 Route::get('/contact/show/{contact}', [ContactController::class, 'show'])->name('showContact');
 
 Route::get('/createSosmed', [SocialMediaController::class, 'create'])->name('createSosmed');
+Route::post('/storeSosmed', [SocialMediaController::class, 'store'])->name('storeSosmed');
 
 
 // Front End

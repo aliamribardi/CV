@@ -38,7 +38,20 @@ class SocialMediaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sosmed = new SocialMedia();
+        $sosmed['user_id'] = auth()->user()->id;
+        $sosmed['facebook'] = $request['facebook'];
+        $sosmed['twitter'] = $request['twitter'];
+        $sosmed['google_plus'] = $request['google_plus'];
+        $sosmed['linkedin'] = $request['linkedin'];
+        $sosmed['instagram'] = $request['instagram'];
+        $sosmed['dribbble'] = $request['dribbble'];
+        $sosmed['skype'] = $request['skype'];
+        $sosmed->save();
+
+        session()->flash('success', 'successfully added social media');
+
+        return redirect()->route('home');
     }
 
     /**

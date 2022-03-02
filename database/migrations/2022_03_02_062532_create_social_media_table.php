@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('social_media', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('facebook');
-            $table->string('twitter'); 
-            $table->string('google_plus'); 
-            $table->string('linkedin'); 
-            $table->string('instagram'); 
-            $table->string('dribbble'); 
-            $table->string('skype'); 
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable(); 
+            $table->string('google_plus')->nullable(); 
+            $table->string('linkedin')->nullable(); 
+            $table->string('instagram')->nullable(); 
+            $table->string('dribbble')->nullable(); 
+            $table->string('skype')->nullable(); 
             $table->timestamps();
         });
     }
