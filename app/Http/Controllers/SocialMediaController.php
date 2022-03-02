@@ -25,9 +25,7 @@ class SocialMediaController extends Controller
      */
     public function create()
     {
-        return view('adminPanel.createSocialMedia', [
-            'contacts' => Contact::where('user_id', auth()->user()->id)->Limit(2)->get(),
-        ]);
+        return view('adminPanel.createSocialMedia');
     }
 
     /**

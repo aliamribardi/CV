@@ -52,7 +52,6 @@ class ContactController extends Controller
     {
         return view('adminPanel.detailContact', [
             'contactt' => $contact,
-            'contacts' => Contact::where('user_id', auth()->user()->id)->Limit(2)->get(),
 
         ]);
     }

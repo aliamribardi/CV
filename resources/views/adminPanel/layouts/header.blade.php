@@ -6,7 +6,7 @@
                     <i class="fa fa-search"></i>
                 </a>
             </li>
-            @if (!Route::is('Contact'))
+            @if (Route::is('home'))
             <li class="dropdown">
                 <a href="#" title="Messages" id="messages" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="glyphicon glyphicon-comment"></i>
